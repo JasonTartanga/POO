@@ -7,7 +7,6 @@ public class Main {
 	public static void main(String[] args) {
 
 //Variables, array, y personas predefinidas
-		String opcS;
 		int opc = 0;
 		int cuentasCreadas = 0;
 
@@ -22,16 +21,9 @@ public class Main {
 
 //Creamos menu y preguntamos opcion
 		do {
-			opcS = JOptionPane.showInputDialog(
-					"1.Introducir cuentas\n2.Cantidad de cuentas\n3.Ingresar mediante titular\n4.Comision\n5.Mayor saldo\n6.Superiores a saldo introducido\n7.Titular concreto\n8.Buscar por grupod de caracteres\n9.Mostrar cuentas ordenadas\n10.Salir");
+			opc = Integer.parseInt(JOptionPane.showInputDialog(
+					"1.Introducir cuentas\n2.Cantidad de cuentas\n3.Ingresar mediante titular\n4.Comision\n5.Mayor saldo\n6.Superiores a saldo introducido\n7.Titular concreto\n8.Buscar por grupod de caracteres\n9.Mostrar cuentas ordenadas\n10.Salir"));
 
-//Si no pulsamos esc o cancelar que salga
-			if (opcS == null) {
-				opc = 10;
-			} else {
-				opc = Integer.parseInt(opcS);
-			}
-			
 //Menu
 			switch (opc) {
 
@@ -63,6 +55,7 @@ public class Main {
 				ordenar(cuenta, cuentasCreadas);
 				break;
 			case 10:
+			case -1:
 				JOptionPane.showMessageDialog(null, "Has decidido salir", "SALIR", JOptionPane.WARNING_MESSAGE);
 				break;
 			default:
