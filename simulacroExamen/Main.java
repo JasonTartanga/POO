@@ -2,20 +2,13 @@ package ejercicio1;
 
 import javax.swing.JOptionPane;
 
-public class Main {
+public class MAIN {
 
 	public static void main(String[] args) {
 		Asignatura[] asignatura = new Asignatura[100];
 
-		asignatura[0] = new Asignatura("PRG", "1DAM", 25, 5);
-		asignatura[1] = new Asignatura("PRG", "2DAM", 25, 9);
-		asignatura[2] = new Asignatura("BDA", "1DAM", 25, 10);
-		asignatura[3] = new Asignatura("LMS", "1DAM", 25, 1);
-		asignatura[4] = new Asignatura("LMS", "2DAM", 25, 0);
-		asignatura[5] = new Asignatura("FOL", "1DAM", 25, 25);
-
 		int opc;
-		int numAsignaturas = 6;
+		int numAsignaturas = 1;
 
 		do {
 			opc = Integer.parseInt(JOptionPane.showInputDialog(
@@ -142,13 +135,17 @@ public class Main {
 
 	private static int introducirAsignaturas(Asignatura[] asignatura, int numAsignaturas) {
 		int seguir = 0;
+		String nombre;
+		String curso;
+		
 		for (int i = 0; i < numAsignaturas && seguir != 1; i++) {
-			asignatura[i] = new Asignatura();
+			nombre = JOptionPane.showInputDialog("Introduce la asignatura");
+			curso = JOptionPane.showInputDialog("Introduce el curso");
+			asignatura[i] = new Asignatura(nombre, curso);
 			asignatura[i].setDatos();
 			seguir = JOptionPane.showConfirmDialog(null, "¿Continuar introduciendo asignaturas?");
 			numAsignaturas++;
 		}
-		return numAsignaturas;
+		return numAsignaturas -1;
 	}
-
 }
