@@ -11,8 +11,6 @@ public class Asignatura {
 
 // Metodos
 	public void setDatos() {
-		nombre = JOptionPane.showInputDialog("Introduce la asignatura");
-		curso = JOptionPane.showInputDialog("Introduce el curso");
 		matriculados = Integer.parseInt(JOptionPane.showInputDialog("Introduce el numero de matriculados", 0));
 		suspensos = Integer.parseInt(JOptionPane.showInputDialog("Introduce el numero de suspensos", 0));
 
@@ -37,9 +35,6 @@ public class Asignatura {
 	}
 
 //Constructores	
-	public Asignatura() {
-	}
-
 	public Asignatura(String nombre, String curso) {
 		this.nombre = nombre;
 		this.curso = curso;
@@ -92,5 +87,4 @@ public class Asignatura {
 	public void setSuspensos(int suspensos) {
 		this.suspensos = suspensos;
 	}
-
 }
